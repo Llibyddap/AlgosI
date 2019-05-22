@@ -1,6 +1,6 @@
 #  Bill Armstrong
 #  May 2019
-#  Sort Merge Algorithm
+#  Merge Sort Algorithm
 ###########################################
 
 lst = [10, 2, 4, 6, 8, 1, 3, 5, 7, 9, 34, 35, 12, 67, 98, 43, 42, 1483]
