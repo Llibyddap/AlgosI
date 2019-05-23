@@ -13,8 +13,8 @@ import time
 
 #  int() method is used to force type integer rather than
 #  type float.
-num1 = int(567234654345678675456345822)
-num2 = int(123968768797865545876587654)
+num1 = int(3141592653589793238462643383279502884197169399375105820974944592)
+num2 = int(2718281828459045235360287471352662497757247093699959574966967627)
 
 def recIntMult (x, y):
 
@@ -49,6 +49,9 @@ def recIntMult (x, y):
 
         return ac * 10**(n) + (ad_bc * 10**(n/2)) + bd
 
+print(recIntMult(num1, num2))
+print(num1*num2)
+'''
 start = time.time()
 result1 = (recIntMult(num1, num2))
 end = time.time()
@@ -58,7 +61,7 @@ start = time.time()
 result2 = (num1 * num2)
 end = time.time()
 print("python algorithm: ", result2, "  elapsed time: ", end - start)
-
+'''
 '''
 After some experimenting python3.7 seems to have a better time than the 
 karatsuba algorithm.  After some additional research, python3.7 implements
