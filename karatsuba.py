@@ -9,11 +9,12 @@
 #  issues.  From the math module I've used divmod() method 
 #  as described below.
 from math import *
+import time
 
 #  int() method is used to force type integer rather than
 #  type float.
-num1 = int(5678)
-num2 = int(1234)
+num1 = int(567234654345678675456345822)
+num2 = int(123968768797865545876587654)
 
 def recIntMult (x, y):
 
@@ -48,4 +49,24 @@ def recIntMult (x, y):
 
         return ac * 10**(n) + (ad_bc * 10**(n/2)) + bd
 
-print(recIntMult(num1, num2))
+start = time.time()
+result1 = (recIntMult(num1, num2))
+end = time.time()
+print("karatsuba algorithm: ", result1, "  elapsed time: ", end - start)
+
+start = time.time()
+result2 = (num1 * num2)
+end = time.time()
+print("python algorithm: ", result2, "  elapsed time: ", end - start)
+
+'''
+After some experimenting python3.7 seems to have a better time than the 
+karatsuba algorithm.  After some additional research, python3.7 implements
+two seperate algorithms for its built in multiplication method.  For 
+"small numbers" python uses teh O(N^2) method (long hand) while for "large
+numbers" python implements the karatsuba algorithm.  Even with larger 
+numbers the built in python method executes notably fast.  The reason being
+that the karatsuba code is handled in C code and runs faster.  There is also
+the potential (:-)) that the source python code which is compiled into C is
+more effecient than the code above.
+'''
