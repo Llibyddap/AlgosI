@@ -39,6 +39,16 @@
 #           splitInv := splitInv + (n/2 - i + 1
 #   return (B, splitInv)
 
+###
+#
+# Week two problem - added text import script for algodata2.txt
+#
+###
+
+import time
+
+A = tuple(map(int, [line.rstrip('\n') for line in open("./algodata2.txt")]))
+
 def sortAndCountInv(n):
 
     #  Recursive function to find all inversions through
@@ -74,7 +84,7 @@ def mergeAndCountSplitInv(C, D):
     #  in mergeSort.py except using enbedded while loops 
     #  instead of if, elif, else statements.  A little 
     #  clear (and easier to read) presentation.
-    
+
     B = []
     splitInv = 0
     while len(C) > 0 and len(D) > 0:
@@ -93,7 +103,25 @@ def mergeAndCountSplitInv(C, D):
         D = D[1:]
     return (B, splitInv)
 
-A = (1, 3, 5, 2, 4, 6)
+# Remove comment line below for testing.
+#A = (1, 3, 5, 2, 4, 6)
 
 print("Count Inversions with Recursion")
+print("...running...")
+start = time.time()
 print("Sorted Order, Inversions: ", sortAndCountInv(A))
+end = time.time()
+print ("Data file: ./algodata2.txt")
+print("Total list elements: ", len(A))
+print("Total run time: ", end - start)
+
+###
+#
+#   Output:
+#   
+#   *  number of inversions:  2407905288
+#   Data file: ./algodata2.txt
+#   ('Total list elements: ', 100000)
+#   ('Total run time: ', 16.117273092269897)
+#
+###

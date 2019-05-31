@@ -17,6 +17,15 @@
 #               numInv := numInv + 1
 #   return numInv
 
+###
+#
+# Week two problem - added text import script for algodata2.txt
+#
+###
+
+import time
+
+A = tuple(map(int, [line.rstrip('\n') for line in open("./algodata2.txt")]))
 
 def brute_count(A):
     numInv=0
@@ -27,6 +36,22 @@ def brute_count(A):
     return numInv
 
 #A = (1, 2, 3, 4, 5, 7, 6, 8, 9, 10, 11, 12)
-A = (1, 3, 5, 2, 4, 6)
+#A = (1, 3, 5, 2, 4, 6)
 
-print("Brute Force Count: ", brute_count(A))
+start = time.time()
+print("Inversions: ", brute_count(A))
+end = time.time()
+print ("Data file: ./algodata2.txt")
+print("Total list elements: ", len(A))
+print("Total run time: ", end - start)
+
+###
+#
+#   Output:
+#
+#   ('Inversions: ', 2407905288)
+#   Data file: ./algodata2.txt
+#   ('Total list elements: ', 100000)
+#   ('Total run time: ', 293.84303402900696)
+#
+###
